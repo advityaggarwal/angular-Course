@@ -1,0 +1,37 @@
+<div class='container' *ngIf="bool!=1">
+  <table class='table table-bordered table-striped table-condensed table-responsive'>
+    <tr>
+      <td width="30%">Course Name:</td>
+      <td width="30%">{{Name}}</td>
+    </tr>
+    <tr>
+      <td>Course Id:</td>
+      <td>{{Id}}</td>
+    </tr>
+    <tr>
+      <td>Course Duration:</td>
+      <td>{{Duration}}</td>
+    </tr>
+    <tr>
+      <td>Course Price:</td>
+      <td>{{Price | currency:'INR':true:'1.2-2'}}</td>
+    </tr>
+  </table>
+  <a routerLink='/courses'>Back</a>
+</div>
+
+
+
+<div class='container' *ngIf='bool==1'>
+  <table class='table table-bordered table-striped table-condensed table-responsive'>
+    <tr>
+      <td width="30%">Course Name:</td>
+      <td width="30%">{{Name}}</td>
+    </tr>
+    <tr>
+      <td width="30%">Course Duration:</td>
+      <td width="30%">{{Duration}}&nbsp;hrs</td>
+    </tr>
+    </table>
+    <a routerLink='/courses'>Back</a>
+</div>
