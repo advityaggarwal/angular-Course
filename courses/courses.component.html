@@ -1,0 +1,50 @@
+<div class="container dropdown dropright">
+<ul>
+  <li *ngFor="let course of courses;let i=index"><a routerLink='/display' [queryParams]='course'>Course{{i+1}}</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-trash" (click)="deleteMe(course);"></span></li>
+</ul>
+</div>
+
+<div class="container">
+  <h3>Add Course</h3>
+  <form #editForm="ngForm" class="form-group form-horizontal">
+    <table class="table table-bordered table-responsive table-condensed" border="2px solid black">
+      <tr>
+          <td align="left"><label for='name'>Course Name:</label></td>
+          <td><input type='text' class="form-control" placeholder='Enter Course Name' id='name' [(ngModel)]='name' [ngModelOptions]="{standalone: true}" required><br /><span style="color:red" *ngIf='!name&&validate'>Name is required</span></td>
+      </tr>
+      <tr>
+          <td align="left"><label for='id'>Course Id:</label></td>
+          <td><input type='number' class="form-control" placeholder='Enter Course Id' id='id' [(ngModel)]='id' [ngModelOptions]="{standalone: true}" required><br /><span style="color:red" *ngIf='!id&&validate'>Id is required</span></td>  
+      </tr>
+      <tr>
+          <td align="left"><label for='duration'>Course Duration:</label></td>
+          <td><input type='number' class="form-control" pattern='\d{1,5}' placeholder='Enter Duration in hours' id='duration' [(ngModel)]='duration' [ngModelOptions]="{standalone: true}" required><br /><span style="color:red" *ngIf='!duration&&validate'>Duration is required</span></td>
+      </tr>
+      <tr>
+          <td align="left"><label for='price'>Course Price:</label></td>
+          <td><input type='number' data-symbol="$" class="form-control" pattern='\d{1,8}' placeholder='Enter Course Price' id='price' [(ngModel)]='price' [ngModelOptions]="{standalone: true}" required><br /><span style="color:red" *ngIf='!price&&validate'>Price is required</span></td>
+      </tr>
+      <tr>
+          <td colspan="2" align="center"><input type="button" class="form-control" class='btn btn-success btn-default' value='Add Course' (click)='onAddCourse();'></td>
+      </tr>
+  </table>
+  </form>
+</div>
+
+
+<hr />
+
+<div class="container">
+<form class="form-group">
+<table class="table table-condensed table-bordered table-responsive">
+    <tr>
+        <td><label for="searchname">Enter Course Name:</label></td>
+        <td><input type="text" class="form-control" placeholder='Enter Course Name' id='searchname' [(ngModel)]='searchname' [ngModelOptions]="{standalone: true}"></td>
+        <td><input type="button" class='btn btn-danger' value='Get Duration' (click)='getDuration();'></td>
+    </tr> 
+</table>
+</form>
+</div>
+
+<br>
+<br>
