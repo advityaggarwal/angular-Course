@@ -1,0 +1,22 @@
+<div class='container' *ngFor='let course of courses;let i=index'>
+<strong>Course{{i+1}}</strong>
+<table class="table table-bordered table-responsive">
+        <tr>
+            <td width="30%">Name:</td>
+            <td width="30%">{{course.Name}}</td>
+        </tr>
+        <tr>
+            <td width="30%">ID:</td>
+            <td width="30%">{{course.Id}}</td>
+        </tr>
+        <tr>
+            <td width="30%">Duration:</td>
+            <td width="30%">{{course.Duration}}</td>
+        </tr>
+        <tr>
+            <td width="30%">Price:</td>
+            <td width="30%">{{course.Price | currency:'INR':true:'1.2-2'}}</td>
+        </tr>
+</table>
+<hr>
+</div>
